@@ -1,61 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="ShoppingListCheckoff">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mod-4 Assignment</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="yes.css">
-
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopping List Check off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+    .emptyMessage {
+        font-weight: bold;
+        color: rgb(221, 14, 145);
+        font-size: 1.2em;
+    }
+    li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+    }
+    li > button {
+        margin-left: 6px;
+    }
+    button > span {
+        color: rgb(105, 239, 105);
+    }
+    </style>
 </head>
-
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Mod-4</a>
-        </div>
-    </nav>
-
-    <header class="masthead text-center text-white">
-        <div class="masthead-content">
-            <div class="container">
-                <h1 class="masthead-heading mb-0">Hello Yaakov</h1>
-                <h2 class="masthead-heading mb-0">Good Bye John</h2>
-                <h3 class="masthead-heading mb-0">Good Bye Jen</h3>
-                <h4 class="masthead-heading mb-0">Good Bye Jason</h4>
-                <h5 class="masthead-heading mb-0">Hello Paul</h5>
-                <h6 class="masthead-heading mb-0">Hello Frank</h6>
+    <div class="container">
+        <h1>Shopping List Check Off</h1>
+        <div class="row">
+            <!-- To Buy List -->
+            <div class="col-md-6" ng-controller="ToBuyController as toBuyList">
+                <h2>To Buy:</h2>
+                <ul>
+                    <li ng-repeat="item in toBuyList.items">Buy {{item.quantity}} {{item.name}}
+                        <button class="btn btn-default" ng-click="toBuyList.buyItem($index)"><span class="glyphicon glyphicon-ok"></span> Buy</button>
+                    </li>
+                </ul>
+                <div ng-if="toBuyList.items.length == 0" class="emptyMessage">Everything is bought!</div>
+            </div>
+            <!-- Already Bought List -->
+            <div class="col-md-6" ng-controller="AlreadyBoughtController as alreadyBoughtList">
+                <h2>Already Bought:</h2>
+                <ul>
+                    <li ng-repeat="item in alreadyBoughtList.items">Bought {{item.quantity}} {{item.name}}</li>
+                </ul>
+                <div ng-if="alreadyBoughtList.items.length == 0" class="emptyMessage">Nothing bought yet.</div>
             </div>
         </div>
-        <div class="bg-circle-1 bg-circle"></div>
-        <div class="bg-circle-2 bg-circle"></div>
-        <div class="bg-circle-3 bg-circle"></div>
-        <div class="bg-circle-4 bg-circle"></div>
-    </header>
-    <!-- Footer -->
-    <footer class="py-5 bg-black">
-        <div class="container">
-            <p class="m-0 text-center text-white small">Code with much effort Ekwere</p>
-        </div>
-        <!-- /.container -->
-    </footer>
-
-    <!--   <script src="js/SpeakHello.js"></script>
-    <script src="js/SpeakGoodBye.js"></script>-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    </div>
+    <script src="angular.min.js"></script>
+    <script src="App8.js"></script>
 </body>
-
 </html>
