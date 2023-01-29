@@ -8,10 +8,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
     <link rel="stylesheet" href="Css/bootstrap.min.css">
     <link rel="stylesheet" href="Css/font-awesome.min.css">
     <link rel="stylesheet" href="Css/bootstrap-social.css">
     <link href="Css/styles.css" rel="stylesheet">
+    <!-- endbuild -->
     <title>Ristorante Con Fusion</title>
 </head>
 
@@ -21,7 +23,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>  
-           <a class="navbar-brand" href="#"><img src="img/logo.png" height="30" width="41"></a>
+           <a class="navbar-brand" href="#"><img src="Img/logo.png" height="30" width="41"></a>
            <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
@@ -30,7 +32,7 @@
                     <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginButton">
                     <span class="fa fa-sign-in"></span> Login</a>
                 </span>   
             </div>         
@@ -163,11 +165,10 @@
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <img src="img/logo.png" class="img-fluid">
+                    <img src="Img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <a type="button" class="btn btn-warning btn-sm btn-block" 
-                    data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
+                    <a type="button" class="btn btn-warning btn-sm btn-block" id="reserveButton">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -180,7 +181,7 @@
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
                             <img class="d-block img-fluid"
-                                src="img/uthappizza.png" alt="Uthappizza">
+                                src="Img/uthappizza.png" alt="Uthappizza">
                             <div class="carousel-caption d-none d-md-block">
                                 <h2>Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-primary">$4.99</span></h2>
                                 <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and
@@ -192,7 +193,7 @@
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid"
-                                src="img/buffet.png" alt="Grand Buffet">
+                                src="Img/buffet.png" alt="Grand Buffet">
                             <div class="carousel-caption d-none d-md-block">
                                 <h2>Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
                                 <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of
@@ -203,7 +204,7 @@
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid"
-                                src="img/alberto.png" alt="Alberto Somayya">
+                                src="Img/alberto.png" alt="Alberto Somayya">
                             <div class="carousel-caption d-none d-md-block">
                                 <h2>Alberto Somayya</h2>
                                 <h4>Executive Chef</h4>
@@ -225,6 +226,9 @@
                         <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>
+                        <button class="btn btn-danger btn-sm" id="carousel-button">
+                            <span id="carousel-button-icon" class="fa fa-pause"></span>
+                        </button>
                     </div>
 
                 </div>
@@ -237,9 +241,9 @@
             <div class="col-sm col-md order-1">
                <div class="media">
                     <img class="d-flex mr-3 img-thumbnail align-self-center"
-                         src="img/uthappizza.png" alt="Uthappizza">
+                         src="Img/uthappizza.png" alt="Uthappizza">
                     <div class="media-body">
-                        <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
+                        <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-primary">$4.99</span></h2>
                         <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and
                           Italian pizza, topped with Cerignola olives, ripe vine
                           cherry tomatoes, Vidalia onion, Guntur chillies and
@@ -248,8 +252,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="row row-content align-items-center">
             <div class="col-sm-4 col-md-3">
                 <h3>This Month's Promotions</h3>
@@ -264,7 +266,7 @@
                          </p>
                     </div>
                     <img class="d-flex mr-3 img-thumbnail align-self-center"
-                    src="img/buffet.png" alt="Grand Buffet">
+                    src="Img/buffet.png" alt="Grand Buffet">
                 </div>
             </div>
         </div>
@@ -276,7 +278,7 @@
             <div class="col-sm col-md order-1">
                 <div class="media">
                     <img class="d-flex mr-3 img-thumbnail align-self-center"
-                         src="img/alberto.png" alt="Alberto Somayya">
+                         src="Img/alberto.png" alt="Alberto Somayya">
                     <div class="media-body">
                         <h2 class="mt-0">Alberto Somayya</h2>
                         <h4>Executive Chef</h4>
@@ -336,10 +338,12 @@
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <!-- Bootsrap beta 4 replaced Tether with Popper -->
-    <script src="Js/jquery.min.js"></script>
-    <script src="Js/popper.min.js"></script>
-    <script src="Js/bootstrap.min.js"></script>	
-
+    <!-- build:js js/main.js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="JS/popper.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+    <script src="JS/script.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>
